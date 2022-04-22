@@ -46,6 +46,7 @@ jobs:
         run: >
           python format_checker/main.py ${{github.event.before}}
           ${{github.event.after}}
+      - run: mvn --batch-mode --update-snapshots package    
       - run: git clone https://github.com/twilio/authy-java
       - run: ls
       - run:    git rev-parse HEAD
