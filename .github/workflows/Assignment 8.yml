@@ -14,8 +14,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - run: git clone https://github.com/twilio/authy-java
-      - run: cd authy-java
       - run:    git rev-parse HEAD
-      - run: mvn test-compile -pl . -am
-      - run:      mvn -pl . test -Dtest=com.authy.api.UserStatusTest#testToXML
-      - run:      mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.authy.api.UserStatusTest#testToXML
+      - run: mvn test-compile -pl authy-java/. -am
+      - run:      mvn -pl authy-java/. test -Dtest=com.authy.api.UserStatusTest#testToXML
+      - run:      mvn -pl authy-java/. edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.authy.api.UserStatusTest#testToXML
