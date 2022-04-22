@@ -13,13 +13,9 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Creating test
-        run: 
-           git clone https://github.com/twilio/authy-java
-           cd typescript-generator
-           git rev-parse HEAD
-      - name: Running Test
-        run:
-           mvn test-compile -pl . -am
-           mvn -pl . test -Dtest=com.authy.api.UserStatusTest#testToXML
-           mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.authy.api.UserStatusTest#testToXML
+      - run: git clone https://github.com/twilio/authy-java
+      - run: cd typescript-generator
+      - run:    git rev-parse HEAD
+      - run: mvn test-compile -pl . -am
+      - run:      mvn -pl . test -Dtest=com.authy.api.UserStatusTest#testToXML
+      - run:      mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.authy.api.UserStatusTest#testToXML
