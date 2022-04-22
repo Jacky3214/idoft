@@ -14,7 +14,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - run: git clone https://github.com/twilio/authy-java
-      - run: cd typescript-generator
+      - run: cd authy-java
       - run:    git rev-parse HEAD
       - run: mvn test-compile -pl . -am
       - run:      mvn -pl . test -Dtest=com.authy.api.UserStatusTest#testToXML
