@@ -48,6 +48,7 @@ jobs:
           ${{github.event.after}}
       - run: git clone https://github.com/twilio/authy-java
       - run: cd authy-java
+      - run: ls
       - run:    git rev-parse HEAD
       - run: mvn test-compile -pl . -am
       - run:      mvn -pl . test -Dtest=com.authy.api.UserStatusTest#testToXML
