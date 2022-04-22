@@ -15,6 +15,9 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: 
+           git clone https://github.com/twilio/authy-java
+           cd typescript-generator
+           git rev-parse HEAD
            mvn test-compile -pl . -am
            mvn -pl . test -Dtest=com.authy.api.UserStatusTest#testToXML
            mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.authy.api.UserStatusTest#testToXML
