@@ -47,7 +47,7 @@ jobs:
           python format_checker/main.py ${{github.event.before}}
           ${{github.event.after}}
       - run: git clone https://github.com/twilio/authy-java
-
+      - run: ls
       - run:    git rev-parse HEAD
       - run: mvn test-compile -pl authy-java/. -am
       - run:      mvn -pl authy-java/. test -Dtest=com.authy.api.UserStatusTest#testToXML
