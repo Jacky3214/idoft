@@ -15,4 +15,4 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn -pl . test -Dtest=com.authy.api.UserStatusTest#testToXML
-        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.authy.api.UserStatusTest#testToXML
+           mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.authy.api.UserStatusTest#testToXML
